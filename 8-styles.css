@@ -1,0 +1,570 @@
+@font-face {
+  font-family: 'SpinCycle';
+  src: url('fonts/SpinCycle-OT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ====== Base Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0d1b2a;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover,
+a:active {
+  color: #FF6565;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ====== Banner Section ====== */
+.banner {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), #0d1b2a), 
+              url('assets/headphones_hero_1.jpg') no-repeat center center / cover;
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== Navigation ====== */
+.banner-header {
+  width: 100%;
+}
+
+.nav-bar {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+}
+
+/* Left side: hamburger + logo */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* spacing between hamburger and logo */
+}
+
+/* Hamburger styles */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+ .hamburger span {
+      height: 4px;
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+/* ====== Hero Content ====== */
+.banner-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 150px;
+}
+
+.banner-content .subtext {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #FF6565;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  margin-top: 25px;
+  margin-bottom: 70px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: 210px;
+  align-self: center;
+}
+
+.cta-btn:hover {
+  opacity: 0.3;
+}
+
+.banner-content .description {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ====== Responsive Styles (≤ 480px) ====== */
+@media (max-width: 480px) {
+ .hamburger {
+    display: flex;
+  }
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    gap: 20px;
+    z-index: 1000;
+    text-align: center;
+  }
+
+    .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Cross animation */
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content .subtext {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  .banner-content {
+    padding: 30px 20px;
+  }
+}
+
+/*====== WHAT WE DO ----SECTION ===== */
+.what-we-do {
+  background-color: #ffffff;
+  color: #000;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.what-we-do .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service {
+  flex: 1 1 22%;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #FF6565;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Our Results Section */
+.results-section {
+  background: url('assets/headphones_hero_2.jpg') no-repeat center center/cover; 
+  position: relative;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.results-overlay {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.results-section h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
+.results-section p {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  text-align: center;
+  
+}
+
+.results-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pentagon {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.pentagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pentagon .overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none; /* allow clicks to go through */
+}
+
+.pentagon .percent {
+  font-size: 1.5rem;
+}
+
+.pentagon .label {
+  font-size: 0.7rem;
+  margin-top: 10px;
+  font-weight: 100;
+}
+
+
+.contact-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-us h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 5px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+  color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: #ff6565;
+  outline: none;
+}
+
+.cta-button {
+  background-color: #ff6565;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.cta-button:hover {
+  background-color: #e25555;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+/* ===== Footer Section ===== */
+.footer-section {
+  background-color:  #000d20;
+  color: #fff;
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  height: 40px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.social-icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #FF6565;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Responsive - Tablets and below */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .footer-copy {
+    font-size: 10px;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes bounceScale {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 1; }
+  50% { transform: scale(1.05) translateY(-10px); opacity: 0.8; }
+}
+
+@keyframes rotateFade {
+  0% { transform: rotate(0deg); opacity: 1; }
+  50% { transform: rotate(10deg); opacity: 0.6; }
+  100% { transform: rotate(0deg); opacity: 1; }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* ------------- ALWAYS RUNNING ANIMATIONS ------------ */
+.what-we-do .service.animated {
+  animation: bounceScale 4s ease-in-out infinite;
+  /* Different delays for variety */
+  animation-delay: calc(var(--i, 0) * 0.5s);
+  transform-origin: center bottom;
+  cursor: pointer;
+}
+
+.results-section .pentagon.animated {
+  animation: rotateFade 5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.7s);
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+/* ------------- HOVER ANIMATIONS ------------ */
+
+/* Remove always running animation on hover-enabled case */
+.what-we-do .service.animated:hover {
+  animation: none;
+  /* Add scale + rotate + shadow on hover */
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 15px rgba(255, 101, 101, 0.5);
+}
+
+.results-section .pentagon.animated:hover {
+  animation: none;
+  transform: scale(1.15) rotate(-10deg);
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 101, 101, 0.7);
+}
+
+/* Optional: pulse opacity on hover for service icons */
+.what-we-do .service.animated:hover .service-icon {
+  animation: pulseOpacity 1.2s ease-in-out infinite alternate;
+}
+
+/* Optional: tilt overlay text on pentagon hover */
+.results-section .pentagon.animated:hover .overlay-text {
+  animation: tilt 1s ease-in-out infinite alternate;
+}
+
